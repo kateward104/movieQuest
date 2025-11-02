@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieQuest Contact</title>
+    <link rel="stylesheet" href="home/styles.css">
+    <script type="module" src="home/main.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <img src="#" alt="Back Button">
+        <a href="index.html"><img src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
+    </nav>
+    <!--Collect their first name, last name, email, phone number, gender, subscribe, updates, dropdown music genre, and submit-->
+    <h1>Contact Us</h1>
+    <form onsubmit="handleSubmit(event)">
+
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br><br>
+
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br><br>
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="subject">What Can We Help You With Today?<br></label>
+        <textarea id="subject" name="subject" placeholder="Write something.. ." style="height:200px"></textarea>
+        <br><br>
+
+        <label for="country">Rate Your Experience </label>
+        <br><br><br>
+
+        <button type="submit">Submit Form</button>
+    </form>
+    <footer>
+        <section class="footerLinks">
+            <a href="index.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="recommendations.html">Recommendations</a>
+            <a href="contact.html">Contact</a>
+        </section>
+    </footer>
+</body>
+
+</html>

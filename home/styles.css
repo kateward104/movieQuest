@@ -1,0 +1,40 @@
+:root {
+    --dark-blue: #222C40;
+    --light-blue: #394A59;
+    --tan: #F2DEA0;
+    --darker-tan: #D9BD89;
+    --gray: #A6977B;
+    --header-font: "Connemara Old Style Light", serif;
+}
+
+section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+body {
+    padding: 30px;
+    background-color: var(--dark-blue);
+    color: var(--gray);
+}
+
+nav,
+footer {
+    background-color: var(--light-blue);
+    padding: 40px;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+}
+
+.list img {
+    width: auto;
+    height: 400px;
+}
+
+
+footer a {
+    color: var(--tan);
+}
