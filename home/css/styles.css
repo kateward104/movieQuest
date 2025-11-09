@@ -25,6 +25,16 @@ body {
     padding: 30px;
 }
 
+#continueQuestInfo {
+    display: flex;
+}
+
+#continueQuestInfoImg {
+    width: 15%;
+    padding: 10px;
+}
+
+
 .list {
     display: flex;
     gap: 20px;
