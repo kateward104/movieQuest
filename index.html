@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
     <title>Movie Quest</title>
     <script type="module" src="home/main.js" defer></script>
-    <link rel="stylesheet" href="home/styles.css">
+    <link rel="stylesheet" href="home/css/styles.css">
 </head>
 
 <body>
     <nav>
         <a href="index.html"><img src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
-        <img src="images/icons/search.png" alt="searchIcon">
-        <img src="currentProfile" alt="currentProfile.name">
+        <img id="searchIcon" src="images/icons/search.png" alt="searchIcon">
+        <img id="currentProfile" src="images/currentProfile.png" alt="currentProfile.name">
     </nav>
     <section class="heroInfo">
         <h1>Welcome Back [Profile Name]!</h1>
         <section class="avatarAndQuest">
-            <img src="#" alt="Profile Avatar">
+            <img id="profileView" src="images/characters/maleAdventurer.png" alt="Profile Avatar">
             <img src="#" alt="questProgress">
             <h4>Continue Your Quest</h4>
         </section>
@@ -48,24 +48,38 @@
     <section class="genres">
         <h2>Genres</h2>
         <section class="genresCircles">
-            <img src="#" alt="Action">
-            <img src="#" alt="Comedy">
-            <img src="#" alt="Drama">
-            <img src="#" alt="Fantasy">
-            <img src="#" alt="Sci-Fi">
-            <img src="#" alt="Thriller">
-            <img src="#" alt="Romance">
-            <img src="#" alt="Family">
-            <img src="#" alt="Kids">
-            <img src="#" alt="Mystery">
+            <img src="images/icons/genres/action.png" alt="Action">
+            <img src="images/icons/genres/comedy.png" alt="Comedy">
+            <img src="images/icons/genres/fantasy.png" alt="Fantasy">
+            <img src="images/icons/genres/sci-fi.png" alt="Sci-Fi">
+            <img src="images/icons/genres/romance.png" alt="Romance">
+            <img src="images/icons/genres/family.png" alt="Family">
+            <img src="images/icons/genres/kids.png" alt="Kids">
+            <img src="images/icons/genres/mystery.png" alt="Mystery">
         </section>
     </section>
     <footer>
         <section class="footerLinks">
-            <a href="index.html">Home</a>
-            <a href="watchlist.html">Watchlist</a>
-            <a href="recommendations.html">Recommendations</a>
-            <a href="contact.html">Contact</a>
+            <class id="footerIcon">
+                <a href="index.html"><img src="images/icons/footer/home.png" alt="Home Icon">
+                    <p>Home</p>
+                </a>
+            </class>
+            <class id="footerIcon">
+                <a href="watchlist.html"><img src="images/icons/footer/watchlist.png" alt="Watchlist Icon">
+                    <p>Watchlist</p>
+                </a>
+            </class>
+            <class id="footerIcon">
+                <a href="recommendations.html"><img src="images/icons/footer/recommended.png" alt="Recommended Icon">
+                    <p>Recommendations</p>
+                </a>
+            </class>
+            <class id="footerIcon">
+                <a href="contact.html"><img src="images/icons/footer/contact.png" alt="Contact Icon">
+                    <p>Contact</p>
+                </a>
+            </class>
         </section>
     </footer>
 </body>
