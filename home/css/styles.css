@@ -16,7 +16,6 @@ section {
 }
 
 body {
-    /*padding: 30px;*/
     background-color: var(--dark-blue);
     color: var(--gray);
 }
