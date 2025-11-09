@@ -1,0 +1,44 @@
+/************ Navigation ******************/
+
+nav {
+    display: flex;
+    background-color: var(--light-blue);
+    padding: 40px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+#currentProfile {
+    width: 20%;
+    height: auto;
+    z-index: 1;
+    margin-bottom: -100px;
+    margin-right: -30px;
+}
+
+#profileInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+#profileView {
+    width: 20%;
+    height: auto;
+}
+
+#searchIcon {
+    width: 8%;
+    height: 8%;
+}
+
+
+
+#currentProfile {
+    justify-content: right;
+}
