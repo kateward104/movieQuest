@@ -1,3 +1,5 @@
+@import "footer.css";
+
 :root {
     --dark-blue: #222C40;
     --light-blue: #394A59;
@@ -18,10 +20,24 @@ body {
     color: var(--gray);
 }
 
-nav,
-footer {
+/************ Navigation ******************/
+
+nav {
+    display: flex;
     background-color: var(--light-blue);
     padding: 40px;
+    margin: auto;
+}
+
+#profileView {
+    width: 20%;
+    height: auto;
+}
+
+
+
+#currentProfile {
+    justify-content: right;
 }
 
 .list {
@@ -34,7 +50,7 @@ footer {
     height: 400px;
 }
 
-
-footer a {
-    color: var(--tan);
+.genres {
+    margin: auto;
+    text-align: center;
 }

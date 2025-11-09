@@ -1,0 +1,31 @@
+/************ Footer ****************/
+
+footer {
+    display: flex;
+    background-color: var(--light-blue);
+    padding: 40px;
+}
+
+
+.footerLinks {
+    display: flex;
+    margin: auto;
+
+}
+
+footer a {
+    color: var(--tan);
+    text-decoration: none;
+}
+
+#footerIcon {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#footerIcon img {
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
