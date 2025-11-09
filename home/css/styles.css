@@ -1,3 +1,4 @@
+@import "nav.css";
 @import "footer.css";
 
 :root {
@@ -15,29 +16,13 @@ section {
 }
 
 body {
-    padding: 30px;
+    /*padding: 30px;*/
     background-color: var(--dark-blue);
     color: var(--gray);
 }
 
-/************ Navigation ******************/
-
-nav {
-    display: flex;
-    background-color: var(--light-blue);
-    padding: 40px;
-    margin: auto;
-}
-
-#profileView {
-    width: 20%;
-    height: auto;
-}
-
-
-
-#currentProfile {
-    justify-content: right;
+.content {
+    padding: 30px;
 }
 
 .list {
