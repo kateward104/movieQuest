@@ -27,19 +27,32 @@ body {
     padding: 30px;
 }
 
+h1 {
+    font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--tan);
+}
+
 h2 {
     font-family: var(--header-font);
     color: var(--tan);
 }
 
+.content {
+    margin-top: 150px;
+    padding: 20px;
+}
 
-/* Hero Section */
 
 .heroInfo {
     display: flex;
     justify-content: space-between;
     margin: auto;
 }
+
+
+/* Home Hero Section */
 
 
 #continueQuestInfo {
@@ -88,6 +101,34 @@ h2 {
 
 
 
+
+
+/* Recommendations Page */
+
+.newQuests {
+    text-align: center;
+    justify-content: center;
+}
+
+.newQuestsList {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#questIcon img {
+    width: 50%;
+    height: auto;
+}
+
+#watchMore {
+    width: 10%;
+    height: 10%;
+}
+
+
+
+
 @media screen and (max-width: 768px) {
     body {
         justify-content: center;
@@ -101,10 +142,9 @@ h2 {
 
     .heroInfo {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         justify-content: center;
         align-items: center;
-        text-align: center;
     }
 
 
@@ -125,4 +165,13 @@ h2 {
         width: 90%;
         height: auto;
     }
+
+
+
+    /* Recommendations Page */
+    .newQuestsList {
+        flex-direction: column;
+        align-content: center;
+    }
+
 }
