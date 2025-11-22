@@ -3,14 +3,41 @@
 nav {
     display: flex;
     background-color: var(--light-blue);
-    padding: 40px;
-    margin: auto;
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
     width: 100%;
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#navIcon {
+    justify-content: center;
+    text-align: center;
+}
+
+#navIcon img {
+    width: 30%;
+    height: auto;
+    margin: auto;
+    align-content: center;
+}
+
+#navIcon a {
+    text-decoration: none;
+    color: var(--tan);
+}
+
+#navIcon p {
+    padding: 0px;
+    margin: 0px;
+    font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
@@ -31,12 +58,6 @@ nav {
     width: 20%;
     height: auto;
 }
-
-#searchIcon {
-    width: 8%;
-    height: 8%;
-}
-
 
 
 #currentProfile {

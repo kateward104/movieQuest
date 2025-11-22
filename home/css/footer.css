@@ -4,28 +4,18 @@ footer {
     display: flex;
     background-color: var(--light-blue);
     padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 100px;
 }
 
-
-.footerLinks {
-    display: flex;
-    margin: auto;
-
-}
 
 footer a {
     color: var(--tan);
     text-decoration: none;
-}
-
-#footerIcon {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-#footerIcon img {
-    width: 50%;
-    height: auto;
-    margin: auto;
+    padding: 0px;
+    margin: 0px;
+    font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }

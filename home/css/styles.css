@@ -7,7 +7,10 @@
     --tan: #F2DEA0;
     --darker-tan: #D9BD89;
     --gray: #A6977B;
-    --header-font: "Connemara Old Style Light", serif;
+    --header-font: "connemara-old-style", sans-serif;
+    /* font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;*/
 }
 
 section {
@@ -22,6 +25,11 @@ body {
 
 .content {
     padding: 30px;
+}
+
+h2 {
+    font-family: var(--header-font);
+    color: var(--tan);
 }
 
 #continueQuestInfo {
