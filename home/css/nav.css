@@ -20,6 +20,7 @@ nav {
     text-align: center;
 }
 
+
 #navIcon img {
     width: 30%;
     height: auto;
@@ -62,4 +63,20 @@ nav {
 
 #currentProfile {
     justify-content: right;
+}
+
+.nav-dropdown {
+    display: hidden;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .nav-dropdown {
+        display: flex;
+    }
+
+    .nav-regular {
+        display: hidden;
+    }
 }
