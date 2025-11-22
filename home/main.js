@@ -1,22 +1,11 @@
-const toggle = document.getElementById('navToggle');
-const links = document.getElementById('navLinks');
 
-toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
+/* Mobile Menu Toggle */
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("navToggle");
+    const menu = document.getElementById("mobileMenu");
+
+    toggle.addEventListener("click", () => {
+        const isOpen = menu.style.display === "flex";
+        menu.style.display = isOpen ? "none" : "flex";
+    });
 });
-
-
-
-
-
-/*
-<button class="dropbtn">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="index.html">Home</a>
-                <a href="watchlist.html">Watchlist</a>
-                <a href="recommendations.html">Recommended</a>
-                <a href="#">Search</a>
-            </div>
-*/

@@ -12,28 +12,43 @@
 
 <body>
     <nav>
-        <a href="index.html"><img src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
-        <class id="navIcon">
-            <a href="index.html"><img src="images/icons/footer/home.png" alt="Home Icon">
-                <p>Home</p>
-            </a>
-        </class>
-        <class id="navIcon">
-            <a href="watchlist.html"><img src="images/icons/footer/watchlist.png" alt="Watchlist Icon">
-                <p>Watchlist</p>
-            </a>
-        </class>
-        <class id="navIcon">
-            <a href="recommendations.html"><img src="images/icons/footer/recommended.png" alt="Recommended Icon">
-                <p>Recommendations</p>
-            </a>
-        </class>
-        <class id="navIcon">
-            <a href=""><img src="images/icons/search.png" alt="searchIcon">
-                <p>Search</p>
-            </a>
-        </class>
+        <a href="index.html"><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
+
+        <div id="navLinks">
+            <div id="navIcon">
+                <a href="index.html"><img src="images/icons/footer/home.png" alt="Home Icon">
+                    <p>Home</p>
+                </a>
+            </div>
+            <div id="navIcon">
+                <a href="watchlist.html"><img src="images/icons/footer/watchlist.png" alt="Watchlist Icon">
+                    <p>Watchlist</p>
+                </a>
+            </div>
+            <div id="navIcon">
+                <a href="recommendations.html"><img src="images/icons/footer/recommended.png" alt="Recommended Icon">
+                    <p>Recommendations</p>
+                </a>
+            </div>
+            <div id="navIcon">
+                <a href=""><img src="images/icons/search.png" alt="searchIcon">
+                    <p>Search</p>
+                </a>
+            </div>
+        </div>
+
         <img id="currentProfile" src="images/currentProfile.png" alt="currentProfile.name">
+
+        <!-- Hamburger (Mobile only) -->
+        <div id="navDropdown">
+            <button class="nav-toggle" id="navToggle"><img src="images/icons/dropdown.png" alt=Menu></button>
+        </div>
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="recommendations.html">Recommendations</a>
+            <a href="#">Search</a>
+        </div>
     </nav>
     <section class="content">
         <section class="newQuests">

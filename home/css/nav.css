@@ -1,5 +1,4 @@
 /************ Navigation ******************/
-
 nav {
     display: flex;
     background-color: var(--light-blue);
@@ -14,6 +13,45 @@ nav {
     left: 0;
     right: 0;
 }
+
+#navLinks {
+    display: flex;
+}
+
+#navDropdown {
+    display: none;
+}
+
+/* Mobile Menu Styles */
+
+#mobileMenu {
+    display: none;
+}
+
+
+/* Mobile dropdown hidden by default */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--light-blue);
+    padding: 15px;
+    margin-top: -30px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+/* Dropdown link styling */
+.mobile-menu a {
+    display: block;
+    padding: 40px;
+    color: var(--tan);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+
+
 
 #navIcon {
     justify-content: center;
@@ -65,18 +103,61 @@ nav {
     justify-content: right;
 }
 
-.nav-dropdown {
-    display: hidden;
-}
-
 
 
 @media screen and (max-width: 768px) {
-    .nav-dropdown {
+    nav {
         display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        gap: 20px;
     }
 
-    .nav-regular {
-        display: hidden;
+    nav a {
+        margin-bottom: -40px;
     }
+
+    #navDropdown {
+        display: block;
+    }
+
+    #navLinks {
+        display: none;
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    button img {
+        width: 40%;
+        height: auto;
+    }
+
+    #currentProfile {
+        width: 50%;
+        height: auto;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+
+    #logo {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+    /*
+    * {
+        outline: 1px solid red;
+    }*/
+
+
 }
