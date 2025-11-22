@@ -7,16 +7,18 @@
     --tan: #F2DEA0;
     --darker-tan: #D9BD89;
     --gray: #A6977B;
-    --header-font: "Connemara Old Style Light", serif;
+    --header-font: "connemara-old-style", sans-serif;
+    /* font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;*/
 }
 
 section {
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 body {
-    /*padding: 30px;*/
     background-color: var(--dark-blue);
     color: var(--gray);
 }
@@ -24,6 +26,62 @@ body {
 .content {
     padding: 30px;
 }
+
+h1 {
+    font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--tan);
+}
+
+h2 {
+    font-family: var(--header-font);
+    color: var(--tan);
+}
+
+.content {
+    margin-top: 150px;
+    padding: 20px;
+}
+
+
+.heroInfo {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+/* Home Hero Section */
+
+
+#continueQuestInfo {
+    display: flex;
+}
+
+#continueQuestInfoImg,
+#profileView {
+    width: auto;
+    height: 300px;
+    /* or whatever size you want */
+    object-fit: cover;
+    padding: 20px;
+}
+
+.avatarInfo {
+    display: flex;
+}
+
+
+#questText,
+#avatarStats {
+    width: 400px;
+    height: auto;
+}
+
+
+
+/* Rest of Movie List Selection */
 
 .list {
     display: flex;
@@ -38,4 +96,82 @@ body {
 .genres {
     margin: auto;
     text-align: center;
+}
+
+
+
+
+
+
+/* Recommendations Page */
+
+.newQuests {
+    text-align: center;
+    justify-content: center;
+}
+
+.newQuestsList {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#questIcon img {
+    width: 50%;
+    height: auto;
+}
+
+#watchMore {
+    width: 10%;
+    height: 10%;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .avatarInfo,
+    #continueQuestInfo {
+        flex-direction: column;
+    }
+
+    .heroInfo {
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #questText,
+    #avatarStats {
+        width: 200px;
+        height: auto;
+    }
+
+
+    .list {
+        display: flex;
+        gap: 20px;
+        overflow: hidden;
+    }
+
+    .genres img {
+        width: 90%;
+        height: auto;
+    }
+
+
+
+    /* Recommendations Page */
+    .newQuestsList {
+        flex-direction: column;
+        align-content: center;
+    }
+
 }

@@ -1,16 +1,82 @@
 /************ Navigation ******************/
-
 nav {
     display: flex;
     background-color: var(--light-blue);
-    padding: 40px;
-    margin: auto;
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
     width: 100%;
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#navLinks {
+    display: flex;
+}
+
+#navDropdown {
+    display: none;
+}
+
+/* Mobile Menu Styles */
+
+#mobileMenu {
+    display: none;
+}
+
+
+/* Mobile dropdown hidden by default */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--light-blue);
+    padding: 15px;
+    margin-top: -30px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+/* Dropdown link styling */
+.mobile-menu a {
+    display: block;
+    padding: 40px;
+    color: var(--tan);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+
+
+
+#navIcon {
+    justify-content: center;
+    text-align: center;
+}
+
+
+#navIcon img {
+    width: 30%;
+    height: auto;
+    margin: auto;
+    align-content: center;
+}
+
+#navIcon a {
+    text-decoration: none;
+    color: var(--tan);
+}
+
+#navIcon p {
+    padding: 0px;
+    margin: 0px;
+    font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
@@ -32,13 +98,66 @@ nav {
     height: auto;
 }
 
-#searchIcon {
-    width: 8%;
-    height: 8%;
+
+#currentProfile {
+    justify-content: right;
 }
 
 
 
-#currentProfile {
-    justify-content: right;
+@media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        gap: 20px;
+    }
+
+    nav a {
+        margin-bottom: -40px;
+    }
+
+    #navDropdown {
+        display: block;
+    }
+
+    #navLinks {
+        display: none;
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    button img {
+        width: 40%;
+        height: auto;
+    }
+
+    #currentProfile {
+        width: 50%;
+        height: auto;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+
+    #logo {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+    /*
+    * {
+        outline: 1px solid red;
+    }*/
+
+
 }

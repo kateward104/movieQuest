@@ -4,28 +4,27 @@ footer {
     display: flex;
     background-color: var(--light-blue);
     padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 100px;
 }
 
-
-.footerLinks {
-    display: flex;
-    margin: auto;
-
-}
 
 footer a {
     color: var(--tan);
     text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
-#footerIcon {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
 
-#footerIcon img {
-    width: 50%;
-    height: auto;
-    margin: auto;
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 0px;
+    }
 }
