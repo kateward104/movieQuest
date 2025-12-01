@@ -36,7 +36,7 @@
     </nav>
     <section class="content">
         <!--Collect their first name, last name, email, phone number, gender, subscribe, updates, dropdown music genre, and submit-->
-        <h1>Contact Us</h1>
+        <h1 id="contactModalTitle">Contact Us</h1>
         <form action="https://formspree.io/f/mpwkalgy" method="POST">
             <label for="firstName">First Name: </label>
             <input type="text" id="firstName" name="firstName" required>
@@ -59,6 +59,7 @@
 
             <button type="submit">Submit Form</button>
         </form>
+        
     </section>
     <footer>
         <section class="footerLinks">
@@ -78,7 +79,7 @@
                 </a>
             </class>
             <class id="footerIcon">
-                <a href="contact.html"><img src="images/icons/footer/contact.png" alt="Contact Icon">
+                    <a href="contact.html" class="open-contact-modal"><img src="images/icons/footer/contact.png" alt="Contact Icon">
                     <p>Contact</p>
                 </a>
             </class>
