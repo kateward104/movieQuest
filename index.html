@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
     <title>Movie Quest</title>
-    <script type="module" src="home/main.js" defer></script>
+    <script type="module" src="home/js/main.js" defer></script>
+    <script type="module" src="home/js/modal.mjs" defer></script>
     <link rel="stylesheet" href="home/css/styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
 </head>
@@ -16,29 +17,48 @@
         <a href="index.html"><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
 
         <div id="navLinks">
-            <div id="navIcon">
-                <a href="index.html"><img src="images/icons/footer/home.png" alt="Home Icon">
-                    <p>Home</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href="watchlist.html"><img src="images/icons/footer/watchlist.png" alt="Watchlist Icon">
-                    <p>Watchlist</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href="recommendations.html"><img src="images/icons/footer/recommended.png" alt="Recommended Icon">
-                    <p>Recommendations</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href=""><img src="images/icons/search.png" alt="searchIcon">
-                    <p>Search</p>
-                </a>
-            </div>
+            <a href="index.html">
+                <p>Home</p>
+            </a>
+            <a href="watchlist.html">
+                <p>Watchlist</p>
+            </a>
+            <a href="recommendations.html">
+                <p>Recommendations</p>
+            </a>
+            <img id="searchIcon" src="images/icons/search.png" alt="searchIcon">
+            <img id="navProfile" src="images/characters/adventurerProfile.png" alt="navProfile.name">
         </div>
 
-        <img id="currentProfile" src="images/currentProfile.png" alt="currentProfile.name">
+        <section class="profile">
+            <div id="avatarModal" class="modal" aria-hidden="true">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <h2>Choose Your Character</h2>
+
+                    <div id="avatar-grid">
+                        <img class="avatar-option" data-avatar="images/characters/wizard.png"
+                            data-profile="images/characters/wizardProfile.png" src="images/characters/wizard.png"
+                            alt="Wizard">
+                        <img class="avatar-option" data-avatar="images/characters/knight.png"
+                            data-profile="images/characters/knightProfile.png" src="images/characters/knight.png"
+                            alt="Knight">
+                        <img class="avatar-option" data-avatar="images/characters/rogue.png"
+                            data-profile="images/characters/rogueProfile.png" src="images/characters/rogue.png"
+                            alt="Rogue">
+                        <img class="avatar-option" data-avatar="images/characters/witch.png"
+                            data-profile="images/characters/witchProfile.png" src="images/characters/witch.png"
+                            alt="Witch">
+                        <img class="avatar-option" data-avatar="images/characters/adventurer.png"
+                            data-profile="images/characters/adventurerProfile.png"
+                            src="images/characters/adventurer.png">
+                    </div>
+
+                    <button class="modal-close" id="closeModal">X</button>
+                    <button class="modal-submit" id="submitModal">Confirm</button>
+                </div>
+            </div>
+        </section>
 
         <!-- Hamburger (Mobile only) -->
         <div id="navDropdown">
@@ -53,7 +73,7 @@
     </nav>
 
     <section class="content">
-        <h1>Welcome Back James!</h1>
+        <h1>Welcome Back Taylor!</h1>
         <section class="heroInfo">
             <section class="QuestInfo">
                 <div id="continueQuestInfo">
@@ -75,9 +95,9 @@
                 </div>
             </section>
             <section class="avatarInfo">
-                <img id="profileView" src="images/characters/maleAdventurer.png" alt="Profile Avatar">
+                <img id="profileView" src="images/characters/adventurer.png" alt="Profile Avatar">
                 <div id="avatarStats">
-                    <h2>James</h2>
+                    <h2>Taylor</h2>
                     <p>
                         Level 2 Adventurer<br>
                         XP: 1200/2000<br>
