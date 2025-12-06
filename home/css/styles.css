@@ -1,5 +1,7 @@
+@import "modal.css";
 @import "nav.css";
 @import "footer.css";
+
 
 :root {
     --dark-blue: #222C40;
@@ -174,60 +176,4 @@ h2 {
         align-content: center;
     }
 
-}
-
-/* Modal styles for contact form */
-.modal {
-    position: fixed;
-    inset: 0;
-    display: none; /* hidden by default */
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal[aria-hidden="false"] {
-    display: flex;
-}
-
-.modal-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
-}
-
-.modal-content {
-    position: relative;
-    z-index: 1001;
-    width: 90%;
-    max-width: 720px;
-    background: var(--dark-blue);
-    border-radius: 8px;
-    padding: 28px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    color: var(--gray);
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.modal-close {
-    position: absolute;
-    top: 6px;
-    right: 8px;
-    background: transparent;
-    color: var(--tan);
-    border: none;
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.contact-modal-body {
-    padding-top: 8px;
-}
-
-/* Prevent page scrolling when modal open */
-body.modal-open {
-    overflow: hidden;
 }
