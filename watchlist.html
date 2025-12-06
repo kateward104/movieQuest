@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
     <title>MovieQuest</title>
     <link rel="stylesheet" href="home/css/styles.css">
-    <script type="module" src="home/main.js" defer></script>
+    <script type="module" src="home/js/main.js" defer></script>
+    <script type="module" src="home/js/modal.mjs" defer></script>
 </head>
 
 <body>
@@ -15,29 +16,17 @@
         <a href="index.html"><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
 
         <div id="navLinks">
-            <div id="navIcon">
-                <a href="index.html"><img src="images/icons/footer/home.png" alt="Home Icon">
-                    <p>Home</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href="watchlist.html"><img src="images/icons/footer/watchlist.png" alt="Watchlist Icon">
-                    <p>Watchlist</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href="recommendations.html"><img src="images/icons/footer/recommended.png" alt="Recommended Icon">
-                    <p>Recommendations</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href=""><img src="images/icons/search.png" alt="searchIcon">
-                    <p>Search</p>
-                </a>
-            </div>
+            <a href="index.html">
+                <p>Home</p>
+            </a>
+            <a href="watchlist.html">
+                <p>Watchlist</p>
+            </a>
+            <a href="recommendations.html">
+                <p>Recommendations</p>
+            </a>
+            <img id="searchIcon" src="images/icons/search.png" alt="searchIcon">
         </div>
-
-        <img id="currentProfile" src="images/currentProfile.png" alt="currentProfile.name">
 
         <!-- Hamburger (Mobile only) -->
         <div id="navDropdown">
@@ -49,6 +38,38 @@
             <a href="recommendations.html">Recommendations</a>
             <a href="#">Search</a>
         </div>
+
+        <img id="navProfile" src="images/characters/adventurerProfile.png" alt="navProfile.name">
+
+        <section class="profile">
+            <div id="avatarModal" class="modal" aria-hidden="true">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <h2>Choose Your Character</h2>
+
+                    <div id="avatar-grid">
+                        <img class="avatar-option" data-avatar="images/characters/wizard.png"
+                            data-profile="images/characters/wizardProfile.png" src="images/characters/wizard.png"
+                            alt="Wizard">
+                        <img class="avatar-option" data-avatar="images/characters/knight.png"
+                            data-profile="images/characters/knightProfile.png" src="images/characters/knight.png"
+                            alt="Knight">
+                        <img class="avatar-option" data-avatar="images/characters/rogue.png"
+                            data-profile="images/characters/rogueProfile.png" src="images/characters/rogue.png"
+                            alt="Rogue">
+                        <img class="avatar-option" data-avatar="images/characters/witch.png"
+                            data-profile="images/characters/witchProfile.png" src="images/characters/witch.png"
+                            alt="Witch">
+                        <img class="avatar-option" data-avatar="images/characters/adventurer.png"
+                            data-profile="images/characters/adventurerProfile.png"
+                            src="images/characters/adventurer.png">
+                    </div>
+
+                    <button class="modal-close" id="closeModal">X</button>
+                    <button class="modal-submit" id="submitModal">Confirm</button>
+                </div>
+            </div>
+        </section>
     </nav>
     <section class="content">
         <section class="heroInfo">
@@ -73,30 +94,43 @@
         <section class="myFavorites">
             <h2>My Favorites</h2>
             <section class="list">
-                <img src="images/movies and series images/fantasy/thehobbit.jpg" alt="Action">
-                <img src="images/movies and series images/comedy/jumanjiwelcometothejungle.jpg"
+                <img class="movie" src="images/movies and series images/fantasy/thehobbit.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/the_hobbit_an_unexpected_journey"
+                    alt="The Hobbit: An Unexpected Journey">
+                <img class="movie" src="images/movies and series images/comedy/jumanjiwelcometothejungle.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/jumanji_welcome_to_the_jungle"
                     alt="Jumanji: Welcome to the Jungle">
-                <img src="images/movies and series images/kids/kungfupanda.jpg" alt="Kung Fu Panda">
-                <img src="images/movies and series images/action/topgunmaverick.jpg" alt="Top Gun Maverick">
-                <img src="images/movies and series images/sci-fi/jurassicpark.jpg" alt="Jurassic Park">
+                <img class="movie" src="images/movies and series images/kids/kungfupanda.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/kung_fu_panda" alt="Kung Fu Panda">
+                <img class="movie" src="images/movies and series images/action/topgunmaverick.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/top_gun_maverick" alt="Top Gun Maverick">
+                <img class="movie" src="images/movies and series images/sci-fi/jurassicpark.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/jurassic_park" alt="Jurassic Park">
             </section>
         </section>
         <section class="movies">
             <h2>Movies</h2>
             <section class="list">
-                <img src="images/movies and series images/action/fallguy.jpg" alt="Fall Guy">
-                <img src="images/movies and series images/comedy/nacholibre.jpg" alt="Natcho Libre">
-                <img src="images/movies and series images/mystery/knivesout.jpg" alt="Knivesout">
-                <img src="images/movies and series images/sci-fi/jurassicpark.jpg" alt="Jurassicpark">
+                <img class="movie" src="images/movies and series images/action/fallguy.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/the_fall_guy_2024" alt="Fall Guy">
+                <img class="movie" src="images/movies and series images/comedy/nacholibre.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/nacho_libre" alt="Natcho Libre">
+                <img class="movie" src="images/movies and series images/mystery/knivesout.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/knives_out" alt="Knivesout">
+                <img class="movie" src="images/movies and series images/sci-fi/jurassicpark.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/jurassic_park" alt="Jurassicpark">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
         </section>
         <section class="series">
             <h2>Series</h2>
             <section class="list">
-                <img src="images/movies and series images/series/psych.jpg" alt="Psych">
-                <img src="images/movies and series images/series/office.jpg" alt="The Office">
-                <img src="images/movies and series images/series/eureka.jpg" alt="Eureka">
+                <img class="movie" src="images/movies and series images/series/psych.jpg"
+                    data-rt="https://www.rottentomatoes.com/tv/psych" alt="Psych">
+                <img class="movie" src="images/movies and series images/series/office.jpg"
+                    data-rt="https://www.rottentomatoes.com/tv/the_office" alt="The Office">
+                <img class="movie" src="images/movies and series images/series/eureka.jpg"
+                    data-rt="https://www.rottentomatoes.com/tv/eureka" alt="Eureka">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
         </section>

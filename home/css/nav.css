@@ -83,11 +83,12 @@ nav a {
 }
 
 #navProfile {
-    width: 20%;
-    height: 20%;
+    width: 10%;
+    height: auto;
     z-index: 1;
     margin-bottom: -70px;
     margin-right: -60px;
+    justify-content: right;
 }
 
 #profileView {
@@ -95,9 +96,6 @@ nav a {
     height: auto;
 }
 
-#navProfile {
-    justify-content: right;
-}
 
 
 @media screen and (max-width: 768px) {
@@ -106,12 +104,9 @@ nav a {
         flex-direction: column;
         width: 100%;
         max-width: 100%;
-        height: 10em;
-        padding: 20px;
-        justify-content: center;
+        height: 20em;
         align-items: center;
         position: relative;
-        gap: 20px;
     }
 
 
@@ -124,13 +119,16 @@ nav a {
         display: none;
     }
 
-    button {
+    #navDropdown button {
         background: none;
         border: none;
+        justify-content: center;
+        padding: 0px;
+        margin-top: 0px;
     }
 
-    button img {
-        width: 40%;
+    #navDropdown button img {
+        width: 30%;
         height: auto;
     }
 
@@ -145,6 +143,21 @@ nav a {
         width: 100%;
         height: auto;
         margin: auto;
+    }
+
+    .modal-content {
+        padding: 18px;
+    }
+
+    #avatar-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1em;
+    }
+
+    .avatar-option {
+        width: 4em;
+        height: auto;
     }
 
     /*

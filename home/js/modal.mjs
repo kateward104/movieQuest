@@ -1,70 +1,76 @@
+/* Modal Avatar Logic */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-const avatarModal = document.querySelector("#avatarModal");
-let navProfile = document.querySelector("#navProfile") /* This is the nav profile */
-const avatarOptions = document.querySelectorAll(".avatar-option")
-const closeModalBtn = document.querySelector("#closeModal");
-let profileView = document.querySelector("#profileView"); /* This is the character with the stats */
+    const avatarModal = document.querySelector("#avatarModal");
+    const navProfile = document.querySelector("#navProfile");
+    const profileView = document.querySelector("#profileView");
+    const avatarOptions = document.querySelectorAll(".avatar-option");
+    const closeModalBtn = document.querySelector("#closeModal");
+    const submitModal = document.querySelector("#submitModal");
 
-let savedAvatar = localStorage.getItem("chosenAvatar");
-let savedProfile = localStorage.getItem("profileCard");
+    // Helper function: updates only the elements that exist on this page
+    function updateAvatarUI(avatarURL, profileURL) {
+        if (profileView && avatarURL) {
+            profileView.src = avatarURL;
+        }
 
-if (savedAvatar) {
-    profileView.src = savedAvatar;
-}
+        if (navProfile && profileURL) {
+            navProfile.src = profileURL;
+        }
+    }
 
-if (savedProfile) {
-    navProfile.src = savedProfile;
-}
+    // Load saved choices on every page
+    const savedAvatar = localStorage.getItem("chosenAvatar");
+    const savedProfile = localStorage.getItem("profileCard");
 
+    updateAvatarUI(savedAvatar, savedProfile);
 
+    // Open modal from nav profile (only if this page actually has one)
+    if (navProfile) {
+        navProfile.addEventListener("click", () => {
+            avatarModal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+        });
+    }
 
-navProfile.addEventListener("click", () => {
-    avatarModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-})
+    // Handle selecting an avatar option
+    avatarOptions.forEach(img => {
+        img.addEventListener("click", () => {
+            const chosenAvatar = img.dataset.avatar;
+            const profile = img.dataset.profile;
 
-
-avatarOptions.forEach(img => {
-    img.addEventListener("click", () => {
-        let chosenAvatar = img.dataset.avatar;
-        let profile = img.dataset.profile;
-
-        localStorage.setItem("chosenAvatar", chosenAvatar);
-        localStorage.setItem("profileCard", profile);
+            localStorage.setItem("chosenAvatar", chosenAvatar);
+            localStorage.setItem("profileCard", profile);
+        });
     });
+
+    // Close modal normally
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+            avatarModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+        });
+    }
+
+    // Close by clicking outside
+    avatarModal.addEventListener("click", e => {
+        if (e.target.classList.contains("modal-overlay")) {
+            avatarModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+        }
+    });
+
+    // Submit button inside modal
+    if (submitModal) {
+        submitModal.addEventListener("click", () => {
+            const newAvatar = localStorage.getItem("chosenAvatar");
+            const newProfile = localStorage.getItem("profileCard");
+
+            updateAvatarUI(newAvatar, newProfile);
+
+            avatarModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+        });
+    }
 });
-
-
-
-/* This closes the modal if the user clicks the X*/
-closeModalBtn.addEventListener("click", () => {
-    avatarModal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-});
-
-
-/*This closes the modal if the user clicks outside the modal*/
-avatarModal.addEventListener("click", e => {
-    if (e.target.classList.contains("modal-overlay")) {
-        avatarModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-    }
-})
-
-
-submitModal.addEventListener("click", () => {
-    let newAvatar = localStorage.getItem("chosenAvatar");
-    let newProfile = localStorage.getItem("profileCard");
-
-    if (newAvatar) {
-        profileView.src = newAvatar;
-    }
-
-    if (newProfile) {
-        navProfile.src = newProfile;
-    }
-
-    avatarModal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-})
