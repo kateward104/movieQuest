@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
     <title>MovieQuest</title>
     <link rel="stylesheet" href="home/css/styles.css">
-    <script type="module" src="home/main.js" defer></script>
+    <script type="module" src="home/js/main.js" defer></script>
+    <script type="module" src="home/js/modal.mjs" defer></script>
 </head>
 
 <body>
@@ -15,29 +16,17 @@
         <a href="index.html"><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
 
         <div id="navLinks">
-            <div id="navIcon">
-                <a href="index.html"><img src="images/icons/footer/home.png" alt="Home Icon">
-                    <p>Home</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href="watchlist.html"><img src="images/icons/footer/watchlist.png" alt="Watchlist Icon">
-                    <p>Watchlist</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href="recommendations.html"><img src="images/icons/footer/recommended.png" alt="Recommended Icon">
-                    <p>Recommendations</p>
-                </a>
-            </div>
-            <div id="navIcon">
-                <a href=""><img src="images/icons/search.png" alt="searchIcon">
-                    <p>Search</p>
-                </a>
-            </div>
+            <a href="index.html">
+                <p>Home</p>
+            </a>
+            <a href="watchlist.html">
+                <p>Watchlist</p>
+            </a>
+            <a href="recommendations.html">
+                <p>Recommendations</p>
+            </a>
+            <img id="searchIcon" src="images/icons/search.png" alt="searchIcon">
         </div>
-
-        <img id="currentProfile" src="images/currentProfile.png" alt="currentProfile.name">
 
         <!-- Hamburger (Mobile only) -->
         <div id="navDropdown">
@@ -49,6 +38,38 @@
             <a href="recommendations.html">Recommendations</a>
             <a href="#">Search</a>
         </div>
+
+        <img id="navProfile" src="images/characters/adventurerProfile.png" alt="navProfile.name">
+
+        <section class="profile">
+            <div id="avatarModal" class="modal" aria-hidden="true">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <h2>Choose Your Character</h2>
+
+                    <div id="avatar-grid">
+                        <img class="avatar-option" data-avatar="images/characters/wizard.png"
+                            data-profile="images/characters/wizardProfile.png" src="images/characters/wizard.png"
+                            alt="Wizard">
+                        <img class="avatar-option" data-avatar="images/characters/knight.png"
+                            data-profile="images/characters/knightProfile.png" src="images/characters/knight.png"
+                            alt="Knight">
+                        <img class="avatar-option" data-avatar="images/characters/rogue.png"
+                            data-profile="images/characters/rogueProfile.png" src="images/characters/rogue.png"
+                            alt="Rogue">
+                        <img class="avatar-option" data-avatar="images/characters/witch.png"
+                            data-profile="images/characters/witchProfile.png" src="images/characters/witch.png"
+                            alt="Witch">
+                        <img class="avatar-option" data-avatar="images/characters/adventurer.png"
+                            data-profile="images/characters/adventurerProfile.png"
+                            src="images/characters/adventurer.png">
+                    </div>
+
+                    <button class="modal-close" id="closeModal">X</button>
+                    <button class="modal-submit" id="submitModal">Confirm</button>
+                </div>
+            </div>
+        </section>
     </nav>
     <section class="content">
         <section class="newQuests">
@@ -75,34 +96,48 @@
         <section class="recommended">
             <h2>Recommended For You</h2>
             <section class="list">
-                <img src="images/movies and series images/fantasy/lordoftherings.webp" alt="Recommended 1">
-                <img src="images/movies and series images/family/nightatthemuseum.jpg" alt="Recommended 2">
-                <img src="images/movies and series images/mystery/murdermystery.png" alt="Recommended 3">
-                <img src="images/movies and series images/comedy/freeguy.jpg" alt="Recommended 4">
+                <img class="movie" src="images/movies and series images/fantasy/lordoftherings.webp"
+                    data-rt="https://www.rottentomatoes.com/m/the_lord_of_the_rings_the_fellowship_of_the_ring"
+                    alt="Lord Of The Rings: Fellowship Of The Rings">
+                <img class="movie" src="images/movies and series images/family/nightatthemuseum.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/night_at_the_museum" alt="Night At The Museum">
+                <img class="movie" src="images/movies and series images/mystery/murdermystery.png"
+                    data-rt="https://www.rottentomatoes.com/m/murder_mystery" alt="Murder Mystery">
+                <img class="movie" src="images/movies and series images/comedy/freeguy.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/free_guy" alt="Free Guy">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
         </section>
         <section class="popular">
             <h2>Popular / 5 Stars</h2>
             <section class="list">
-                <img src="images/movies and series images/kids/thesupermariobrosmovie.jpg"
+                <img class="movie" src="images/movies and series images/kids/thesupermariobrosmovie.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/the_super_mario_bros_movie"
                     alt="The Super Mario Bros. Movie">
-                <img src="images/movies and series images/fantasy/wicked.jpg" alt="Wicked">
-                <img src="images/movies and series images/action/uncharted.jpg" alt="Uncharted">
-                <img src="images/movies and series images/sci-fi/edgeoftomorrow.jpg" alt="Edge of Tomorrow">
-                <img src="images/movies and series images/series/psych.jpg" alt="Psych">
+                <img class="movie" src="images/movies and series images/fantasy/wicked.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/wicked_2024" alt="Wicked">
+                <img class="movie" src="images/movies and series images/action/uncharted.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/uncharted_2022" alt="Uncharted">
+                <img class="movie" src="images/movies and series images/sci-fi/edgeoftomorrow.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/live_die_repeat_edge_of_tomorrow" alt="Edge of Tomorrow">
+                <img class="movie" src="images/movies and series images/series/psych.jpg"
+                    data-rt="https://www.rottentomatoes.com/tv/psych" alt="Psych">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
         </section>
         <section class="newlyAdded">
             <h2>Newly Added and Premium Content</h2>
             <section class="list">
-                <img src="images/movies and series images/premium/f1.jpg" alt="F1">
-                <img src="images/movies and series images/premium/How_To_Train_Your_Dragon_2025_Poster.jpg"
-                    alt="How to Train Your Dragon">
-                <img src="images/movies and series images/premium/sonic3.jpg" alt="Sonic 3">
-                <img src="images/movies and series images/premium/wickedForGood.jpg" alt="Wicked for Good">
-                <img src="images/movies and series images/premium/superman.jpg" alt="Superman">
+                <img class="movie" src="images/movies and series images/premium/f1.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/f1_the_movie" alt="F1">
+                <img class="movie" src="images/movies and series images/premium/HTTYDLiveAction.jpg"
+                    data-rt="www.rottentomatoes.com/m/how_to_train_your_dragon_2025" alt="How to Train Your Dragon">
+                <img class="movie" src="images/movies and series images/premium/sonic3.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/sonic_the_hedgehog_3" alt="Sonic 3">
+                <img class="movie" src="images/movies and series images/premium/wickedForGood.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/wicked_for_good" alt="Wicked for Good">
+                <img class="movie" src="images/movies and series images/premium/superman.jpg"
+                    data-rt="https://www.rottentomatoes.com/search?search=superman" alt="Superman">
             </section>
         </section>
     </section>

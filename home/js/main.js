@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!modal) return;
         modal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('modal-open');
-        try { modal._lastFocusedTrigger && modal._lastFocusedTrigger.focus(); } catch (e) {}
+        try { modal._lastFocusedTrigger && modal._lastFocusedTrigger.focus(); } catch (e) { }
     }
 
     // Attach click listeners to any anchor intended to open contact modal
@@ -132,5 +132,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const open = document.querySelector('.modal[aria-hidden="false"]');
             if (open) closeModal(open);
         }
+    });
+});
+
+
+
+
+/* Javascript to make the movies go to rotten tomatoes website */
+
+document.querySelectorAll(".movie").forEach(img => {
+    img.addEventListener("click", () => {
+        window.open(img.dataset.rt, "_blank");
     });
 });

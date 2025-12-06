@@ -27,8 +27,20 @@
                 <p>Recommendations</p>
             </a>
             <img id="searchIcon" src="images/icons/search.png" alt="searchIcon">
-            <img id="navProfile" src="images/characters/adventurerProfile.png" alt="navProfile.name">
         </div>
+
+        <!-- Hamburger (Mobile only) -->
+        <div id="navDropdown">
+            <button class="nav-toggle" id="navToggle"><img src="images/icons/dropdown.png" alt=Menu></button>
+        </div>
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="recommendations.html">Recommendations</a>
+            <a href="#">Search</a>
+        </div>
+
+        <img id="navProfile" src="images/characters/adventurerProfile.png" alt="navProfile.name">
 
         <section class="profile">
             <div id="avatarModal" class="modal" aria-hidden="true">
@@ -59,17 +71,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Hamburger (Mobile only) -->
-        <div id="navDropdown">
-            <button class="nav-toggle" id="navToggle"><img src="images/icons/dropdown.png" alt=Menu></button>
-        </div>
-        <div id="mobileMenu" class="mobile-menu">
-            <a href="index.html">Home</a>
-            <a href="watchlist.html">Watchlist</a>
-            <a href="recommendations.html">Recommendations</a>
-            <a href="#">Search</a>
-        </div>
     </nav>
 
     <section class="content">
@@ -77,8 +78,9 @@
         <section class="heroInfo">
             <section class="QuestInfo">
                 <div id="continueQuestInfo">
-                    <img id="continueQuestInfoImg" src="images/movies and series images/action/topgunmaverick.jpg"
-                        alt="questProgress">
+                    <img class="movie" id="continueQuestInfoImg"
+                        data-rt="https://www.rottentomatoes.com/m/top_gun_maverick"
+                        src="images/movies and series images/action/topgunmaverick.jpg" alt="questProgress">
                     <div id="questText">
                         <h2>Continue Your Quest</h2>
                         <p>
@@ -111,22 +113,31 @@
         <section class="continueWatching">
             <h2>Continue Watching</h2>
             <section class="list">
-                <img src="images/movies and series images/family/nightatthemuseum.jpg" alt="Movie or Series 1">
-                <img src="images/movies and series images/mystery/thethursdaymurderclub.jpg" alt="Movie or Series 2">
-                <img src="images/movies and series images/action/topgunmaverick.jpg" alt="Movie or Series 3">
-                <img src="images/movies and series images/fantasy/harrypotter.jpg" alt="Movie or Series 4">
+                <img class="movie" src="images/movies and series images/family/nightatthemuseum.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/night_at_the_museum" alt="Night At The Museum">
+                <img class="movie" src="images/movies and series images/mystery/thethursdaymurderclub.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/the_thursday_murder_club" alt="The Thursday Murder Club">
+                <img class="movie" src="images/movies and series images/action/topgunmaverick.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/top_gun_maverick" alt="Top Gun: Maverick">
+                <img class="movie" src="images/movies and series images/fantasy/harrypotter.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/harry_potter_and_the_sorcerers_stone"
+                    alt="Harry Potter and the Sorcerer's Stone">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
         </section>
         <section class="newAndPremium">
             <h2>Newly Added and Premium Content</h2>
             <section class="list">
-                <img src="images/movies and series images/premium/f1.jpg" alt="F1">
-                <img src="images/movies and series images/premium/How_To_Train_Your_Dragon_2025_Poster.jpg"
-                    alt="How to Train Your Dragon">
-                <img src="images/movies and series images/premium/sonic3.jpg" alt="Sonic 3">
-                <img src="images/movies and series images/premium/wickedForGood.jpg" alt="Wicked for Good">
-                <img src="images/movies and series images/premium/superman.jpg" alt="Superman">
+                <img class="movie" src="images/movies and series images/premium/f1.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/f1_the_movie alt=" F1">
+                <img class="movie" src="images/movies and series images/premium/HTTYDLiveAction.jpg"
+                    data-rt="www.rottentomatoes.com/m/how_to_train_your_dragon_2025" alt="How to Train Your Dragon">
+                <img class="movie" src="images/movies and series images/premium/sonic3.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/sonic_the_hedgehog_3" alt="Sonic 3">
+                <img class="movie" src="images/movies and series images/premium/wickedForGood.jpg"
+                    data-rt="https://www.rottentomatoes.com/m/wicked_for_good" alt="Wicked for Good">
+                <img class="movie" src="images/movies and series images/premium/superman.jpg"
+                    data-rt="https://www.rottentomatoes.com/search?search=superman" alt="Superman">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
         </section>
