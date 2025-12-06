@@ -140,8 +140,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Javascript to make the movies go to rotten tomatoes website */
 
+
+/*
 document.querySelectorAll(".movie").forEach(img => {
     img.addEventListener("click", () => {
         window.open(img.dataset.rt, "_blank");
     });
-});
+});*/
