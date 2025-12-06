@@ -152,7 +152,7 @@ h2 {
 
     #questText,
     #avatarStats {
-        width: 200px;
+        width: 220px;
         height: auto;
     }
 
@@ -163,8 +163,12 @@ h2 {
         overflow: hidden;
     }
 
+    .genres {
+        gap: 5px;
+    }
+
     .genres img {
-        width: 90%;
+        width: 150px;
         height: auto;
     }
 
