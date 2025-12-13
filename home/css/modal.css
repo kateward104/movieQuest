@@ -95,7 +95,8 @@ body.modal-open {
 }
 
 
-button {
+button,
+.rt-button {
     background-color: var(--tan);
     color: var(--dark-blue);
     font-family: "connemara-old-style", sans-serif;
@@ -106,4 +107,86 @@ button {
     padding: 10px;
     display: flex;
     margin: 1rem auto;
+    text-decoration: none;
+}
+
+
+#movie-modal-content {
+    display: flex;
+    position: relative;
+    z-index: 1001;
+    width: 90%;
+    max-width: 720px;
+    background: var(--dark-blue);
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    color: var(--gray);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#movie-modal-content img {
+    width: auto;
+    height: 25em;
+    padding: 1em;
+}
+
+.movie-modal-info {
+    padding: 1em;
+    color: var(--tan);
+}
+
+#rtButton {
+    margin-top: 2em;
+    display: flex;
+    height: 3.5em;
+    width: 15em;
+    justify-content: left;
+}
+
+#rtButton p {
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+}
+
+#rtButton img {
+    width: 4em;
+    height: 4em;
+    justify-content: center;
+    align-content: center;
+    object-fit: contain;
+    padding: 0;
+}
+
+#modalClose {
+    width: 3em;
+    height: 3em;
+    justify-content: center;
+    align-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    #movie-modal-content {
+        flex-direction: column;
+    }
+
+    #movie-modal-content img {
+        height: auto;
+        width: 10em;
+    }
+
+    #modalClose {
+        position: absolute;
+        top: 10px;
+        /* Adjust these values for desired spacing */
+        right: 10px;
+        /* Adjust these values for desired spacing */
+    }
+
+    #rtButton img {
+        width: 3em;
+    }
+
 }

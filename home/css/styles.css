@@ -57,11 +57,11 @@ h2 {
 /* Home Hero Section */
 
 
-#continueQuestInfo {
+.continueQuestInfo {
     display: flex;
 }
 
-#continueQuestInfoImg,
+.continueQuestInfoImage img,
 #profileView {
     width: auto;
     height: 300px;
@@ -138,7 +138,7 @@ h2 {
     }
 
     .avatarInfo,
-    #continueQuestInfo {
+    .continueQuestInfo {
         flex-direction: column;
     }
 

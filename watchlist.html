@@ -71,11 +71,36 @@
             </div>
         </section>
     </nav>
+
+    <div id="movieModal" class="modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div id="movie-modal-content">
+            <img id="modalImage">
+            <div class="movie-modal-info">
+
+                <h2 id="modalTitle"></h2>
+                <p id="modalYear">Year: <span></span></p>
+                <p id="modalDuration">Time: <span></span></p>
+                <p id="modalRating">Rating: <span></span></p>
+                <p id="modalxpReward"></p>
+                <p id="modalDescription">Summary: <span></span></p>
+
+                <a id="rtButton" class="rt-button" target="_blank">
+                    <img src="images/icons/tomato.png" alt="Rotten Tomatoes Icon">
+                    <h3>Rotten Tomatoes</h3>
+                </a>
+            </div>
+            <button id="modalClose">X</button>
+        </div>
+    </div>
+
     <section class="content">
         <section class="heroInfo">
-            <div id="continueQuestInfo">
-                <img id="continueQuestInfoImg" src="images/movies and series images/action/topgunmaverick.jpg"
-                    alt="questProgress">
+            <div class="continueQuestInfo">
+                <div class="continueQuestInfoImage">
+                    <img src="images/movies and series images/action/topgunmaverick.jpg" data-id="topgunmaverick"
+                        alt="questProgress">
+                </div>
                 <div id="questText">
                     <h2>Continue Your Quest</h2>
                     <p>
@@ -94,30 +119,30 @@
         <section class="myFavorites">
             <h2>My Favorites</h2>
             <section class="list">
-                <img class="movie" src="images/movies and series images/fantasy/thehobbit.jpg"
+                <img class="movie" data-id="thehobbit" src="images/movies and series images/fantasy/thehobbit.jpg"
                     data-rt="https://www.rottentomatoes.com/m/the_hobbit_an_unexpected_journey"
                     alt="The Hobbit: An Unexpected Journey">
-                <img class="movie" src="images/movies and series images/comedy/jumanjiwelcometothejungle.jpg"
+                <img class="movie" data-id="jumanjiwelcometothejungle"
+                    src="images/movies and series images/comedy/jumanjiwelcometothejungle.jpg"
                     data-rt="https://www.rottentomatoes.com/m/jumanji_welcome_to_the_jungle"
                     alt="Jumanji: Welcome to the Jungle">
-                <img class="movie" src="images/movies and series images/kids/kungfupanda.jpg"
+                <img class="movie" data-id="kungfupanda" src="images/movies and series images/kids/kungfupanda.jpg"
                     data-rt="https://www.rottentomatoes.com/m/kung_fu_panda" alt="Kung Fu Panda">
-                <img class="movie" src="images/movies and series images/action/topgunmaverick.jpg"
+                <img class="movie" data-id="topgunmaverick"
+                    src="images/movies and series images/action/topgunmaverick.jpg"
                     data-rt="https://www.rottentomatoes.com/m/top_gun_maverick" alt="Top Gun Maverick">
-                <img class="movie" src="images/movies and series images/sci-fi/jurassicpark.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/jurassic_park" alt="Jurassic Park">
             </section>
         </section>
         <section class="movies">
             <h2>Movies</h2>
             <section class="list">
-                <img class="movie" src="images/movies and series images/action/fallguy.jpg"
+                <img class="movie" data-id="fallguy" src="images/movies and series images/action/fallguy.jpg"
                     data-rt="https://www.rottentomatoes.com/m/the_fall_guy_2024" alt="Fall Guy">
-                <img class="movie" src="images/movies and series images/comedy/nacholibre.jpg"
+                <img class="movie" data-id="nacholibre" src="images/movies and series images/comedy/nacholibre.jpg"
                     data-rt="https://www.rottentomatoes.com/m/nacho_libre" alt="Natcho Libre">
-                <img class="movie" src="images/movies and series images/mystery/knivesout.jpg"
+                <img class="movie" data-id="knivesout" src="images/movies and series images/mystery/knivesout.jpg"
                     data-rt="https://www.rottentomatoes.com/m/knives_out" alt="Knivesout">
-                <img class="movie" src="images/movies and series images/sci-fi/jurassicpark.jpg"
+                <img class="movie" data-id="jurassicpark" src="images/movies and series images/sci-fi/jurassicpark.jpg"
                     data-rt="https://www.rottentomatoes.com/m/jurassic_park" alt="Jurassicpark">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
@@ -125,11 +150,11 @@
         <section class="series">
             <h2>Series</h2>
             <section class="list">
-                <img class="movie" src="images/movies and series images/series/psych.jpg"
+                <img class="movie" data-id="psych" src="images/movies and series images/series/psych.jpg"
                     data-rt="https://www.rottentomatoes.com/tv/psych" alt="Psych">
-                <img class="movie" src="images/movies and series images/series/office.jpg"
+                <img class="movie" data-id="theoffice" src="images/movies and series images/series/office.jpg"
                     data-rt="https://www.rottentomatoes.com/tv/the_office" alt="The Office">
-                <img class="movie" src="images/movies and series images/series/eureka.jpg"
+                <img class="movie" data-id="eureka" src="images/movies and series images/series/eureka.jpg"
                     data-rt="https://www.rottentomatoes.com/tv/eureka" alt="Eureka">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
