@@ -147,3 +147,29 @@ document.querySelectorAll(".movie").forEach(img => {
         window.open(img.dataset.rt, "_blank");
     });
 });*/
+
+/* Genres Carousel */
+document.addEventListener("DOMContentLoaded", () => {
+    const carouselTrack = document.querySelector(".carousel-track");
+    const prevBtn = document.getElementById("genresCarouselPrev");
+    const nextBtn = document.getElementById("genresCarouselNext");
+
+    if (carouselTrack && prevBtn && nextBtn) {
+        // arrow buttons scroll amount
+        const scrollAmount = 150; // One genre item width + gap
+
+        prevBtn.addEventListener("click", () => {
+            carouselTrack.scrollBy({
+                left: -scrollAmount,
+                behavior: "smooth"
+            });
+        });
+
+        nextBtn.addEventListener("click", () => {
+            carouselTrack.scrollBy({
+                left: scrollAmount,
+                behavior: "smooth"
+            });
+        });
+    }
+});
