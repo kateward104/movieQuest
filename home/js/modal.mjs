@@ -1,144 +1,120 @@
-/* Modal Avatar Logic */
+// ---------- Shared modal helpers ----------
+function openModal(modal) {
+    if (!modal) return;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+}
 
-document.addEventListener("DOMContentLoaded", () => {
+function closeModal(modal) {
+    if (!modal) return;
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+}
 
+// ---------- Avatar UI helper ----------
+function updateAvatarUI(avatarURL, profileURL) {
+    const profileView = document.querySelector("#profileView");
+    const navProfile = document.querySelector("#navProfile");
+
+    if (profileView && avatarURL) profileView.src = avatarURL;
+    if (navProfile && profileURL) navProfile.src = profileURL;
+}
+
+// ---------- Avatar Modal ----------
+function initAvatarModal() {
     const avatarModal = document.querySelector("#avatarModal");
     const navProfile = document.querySelector("#navProfile");
-    const profileView = document.querySelector("#profileView");
-    const avatarOptions = document.querySelectorAll(".avatar-option");
     const closeModalBtn = document.querySelector("#closeModal");
     const submitModal = document.querySelector("#submitModal");
+    const avatarOptions = document.querySelectorAll(".avatar-option");
 
-    // Helper function: updates only the elements that exist on this page
-    function updateAvatarUI(avatarURL, profileURL) {
-        if (profileView && avatarURL) {
-            profileView.src = avatarURL;
-        }
-
-        if (navProfile && profileURL) {
-            navProfile.src = profileURL;
-        }
-    }
-
-    // Load saved choices on every page
+    // Load saved avatar on page load
     const savedAvatar = localStorage.getItem("chosenAvatar");
     const savedProfile = localStorage.getItem("profileCard");
-
     updateAvatarUI(savedAvatar, savedProfile);
 
-    // Open modal from nav profile (only if this page actually has one)
-    if (navProfile) {
-        navProfile.addEventListener("click", () => {
-            avatarModal.setAttribute("aria-hidden", "false");
-            document.body.classList.add("modal-open");
-        });
-    }
+    navProfile?.addEventListener("click", () => openModal(avatarModal));
+    closeModalBtn?.addEventListener("click", () => closeModal(avatarModal));
+    submitModal?.addEventListener("click", () => closeModal(avatarModal));
 
-    // Handle selecting an avatar option
+    avatarModal?.addEventListener("click", e => {
+        if (e.target.classList.contains("modal-overlay")) {
+            closeModal(avatarModal);
+        }
+    });
+
+    // Click avatar → save + preview immediately
     avatarOptions.forEach(img => {
         img.addEventListener("click", () => {
-            const chosenAvatar = img.dataset.avatar;
+            const avatar = img.dataset.avatar;
             const profile = img.dataset.profile;
 
-            localStorage.setItem("chosenAvatar", chosenAvatar);
+            localStorage.setItem("chosenAvatar", avatar);
             localStorage.setItem("profileCard", profile);
+
+            updateAvatarUI(avatar, profile);
         });
     });
+}
 
-    // Close modal normally
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener("click", () => {
-            avatarModal.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("modal-open");
-        });
-    }
+// ---------- Load Movies ----------
+async function loadMovies() {
+    const res = await fetch("home/js/movies.json");
+    const data = await res.json();
 
-    // Close by clicking outside
-    avatarModal.addEventListener("click", e => {
-        if (e.target.classList.contains("modal-overlay")) {
-            avatarModal.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("modal-open");
-        }
-    });
+    // Map by ID
+    return Object.fromEntries(
+        data.movies.map(movie => [movie.id, movie])
+    );
+}
 
-    // Submit button inside modal
-    if (submitModal) {
-        submitModal.addEventListener("click", () => {
-            const newAvatar = localStorage.getItem("chosenAvatar");
-            const newProfile = localStorage.getItem("profileCard");
-
-            updateAvatarUI(newAvatar, newProfile);
-
-            avatarModal.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("modal-open");
-        });
-    }
-});
-
-
-
-/* Movie Image Card */
-
-document.addEventListener("DOMContentLoaded", async () => {
-
-    const movieContainer = document.querySelector("#movieContainer");
-
-    // Modal elements
+// ---------- Movie Modal ----------
+function initMovieModal(movieMap) {
     const movieModal = document.querySelector("#movieModal");
-    const modalImage = document.querySelector("#modalImage");
-    const modalTitle = document.querySelector("#modalTitle");
-    const modalYear = document.querySelector("#modalYear");
-    const modalDuration = document.querySelector("#modalDuration");
-    const modalRating = document.querySelector("#modalRating");
-    const modalxpReward = document.querySelector("moviexpReward");
-    const modalDescription = document.querySelector("#modalDescription");
-    const rtButton = document.querySelector("#rtButton");
+    const modalClose = document.querySelector("#modalClose");
 
-    // Fetch movie data
-    const movies = await fetch("movies.json").then(res => res.json());
+    const fields = {
+        image: document.querySelector("#modalImage"),
+        title: document.querySelector("#modalTitle"),
+        year: document.querySelector("#modalYear span"),
+        duration: document.querySelector("#modalDuration span"),
+        rating: document.querySelector("#modalRating span"),
+        xp: document.querySelector("#modalxpReward"),
+        description: document.querySelector("#modalDescription span"),
+        rt: document.querySelector("#rtButton")
+    };
 
-    // Build cards dynamically
-    movies.forEach(movie => {
-        const card = document.createElement("div");
-        card.classList.add("movie-card");
+    document.querySelectorAll(".movie").forEach(img => {
+        img.addEventListener("click", () => {
+            // USE img.id (matches your HTML)
+            const movie = movieMap[img.dataset.id];
+            if (!movie) return;
 
-        card.innerHTML = `
-            <img src="${movie.image}" alt="${movie.title}">
-            <h3>${movie.title}</h3>
-        `;
+            fields.image.src = movie.image;
+            fields.title.textContent = movie.title;
+            fields.year.textContent = movie.release_year;
+            fields.duration.textContent = movie.duration;
+            fields.rating.textContent = movie.rating;
+            fields.xp.textContent = movie.xp_reward;
+            fields.description.textContent = movie.description;
+            fields.rt.href = movie.rt_url;
 
-        // When user clicks card → open modal
-        card.addEventListener("click", () => {
-            openMovieModal(movie);
+            openModal(movieModal);
         });
-
-        movieContainer.appendChild(card);
     });
 
-    // Open modal with movie data
-    function openMovieModal(movie) {
-        modalImage.src = movie.image;
-        modalTitle.textContent = movie.title;
-        modalDescription.textContent = movie.description;
+    modalClose?.addEventListener("click", () => closeModal(movieModal));
 
-        rtButton.href = movie.rt_url;
-
-        movieModal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("modal-open");
-    }
-
-    // Close modal
-    modalClose.addEventListener("click", () => {
-        movieModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-    });
-
-    // Click outside closes it
-    movieModal.addEventListener("click", e => {
+    movieModal?.addEventListener("click", e => {
         if (e.target.classList.contains("modal-overlay")) {
-            movieModal.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("modal-open");
+            closeModal(movieModal);
         }
     });
+}
 
+// ---------- Init ----------
+document.addEventListener("DOMContentLoaded", async () => {
+    initAvatarModal();
+    const movies = await loadMovies();
+    initMovieModal(movies);
 });

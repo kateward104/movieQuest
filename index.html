@@ -10,6 +10,7 @@
     <script type="module" src="home/js/modal.mjs" defer></script>
     <link rel="stylesheet" href="home/css/styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
+    <link rel="icon" type="image/x-icon" href="images/MovieQuestFavicon.jpg">
 </head>
 
 <body>
@@ -73,31 +74,40 @@
         </section>
     </nav>
 
-    <!--
-    <div id="movieContainer"></div>
+
     <div id="movieModal" class="modal" aria-hidden="true">
         <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button id="modalClose">X</button>
+        <div id="movie-modal-content">
             <img id="modalImage">
-            <h2 id="modalTitle"></h2>
-            <p id="modalYear"></p>
-            <p id="modalDuration"></p>
-            <p id="modalRating"></p>
-            <p id="modalxpReward"></p>
-            <p id="modalDescription"></p>
-            <a id="rtButton" class="rt-button" target="_blank">View on Rotten Tomatoes</a>
+            <div class="movie-modal-info">
+
+                <h2 id="modalTitle"></h2>
+                <p id="modalYear">Year: <span></span></p>
+                <p id="modalDuration">Time: <span></span></p>
+                <p id="modalRating">Rating: <span></span></p>
+                <p id="modalxpReward"></p>
+                <p id="modalDescription">Summary: <span></span></p>
+
+                <a id="rtButton" class="rt-button" target="_blank">
+                    <img src="images/icons/tomato.png" alt="Rotten Tomatoes Icon">
+                    <h3>Rotten Tomatoes</h3>
+                </a>
+            </div>
+            <button id="modalClose">X</button>
         </div>
-    </div>-->
+    </div>
+
 
     <section class="content">
         <h1>Welcome Back Taylor!</h1>
         <section class="heroInfo">
             <section class="QuestInfo">
-                <div id="continueQuestInfo">
-                    <img class="movie" id="continueQuestInfoImg"
-                        data-rt="https://www.rottentomatoes.com/m/top_gun_maverick"
-                        src="images/movies and series images/action/topgunmaverick.jpg" alt="questProgress">
+                <div class="continueQuestInfo">
+                    <div class="continueQuestInfoImage">
+                        <img class="movie" data-id="topgunmaverick"
+                            data-rt="https://www.rottentomatoes.com/m/top_gun_maverick"
+                            src="images/movies and series images/action/topgunmaverick.jpg" alt="questProgress">
+                    </div>
                     <div id="questText">
                         <h2>Continue Your Quest</h2>
                         <p>
@@ -130,13 +140,16 @@
         <section class="continueWatching">
             <h2>Continue Watching</h2>
             <section class="list">
-                <img class="movie" src="images/movies and series images/family/nightatthemuseum.jpg"
+                <img class="movie" data-id="nightatthemuseum"
+                    src="images/movies and series images/family/nightatthemuseum.jpg"
                     data-rt="https://www.rottentomatoes.com/m/night_at_the_museum" alt="Night At The Museum">
-                <img class="movie" src="images/movies and series images/mystery/thethursdaymurderclub.jpg"
+                <img class="movie" data-id="thethursdaymurderclub"
+                    src="images/movies and series images/mystery/thethursdaymurderclub.jpg"
                     data-rt="https://www.rottentomatoes.com/m/the_thursday_murder_club" alt="The Thursday Murder Club">
-                <img class="movie" src="images/movies and series images/action/topgunmaverick.jpg"
+                <img class="movie" data-id="topgunmaverick"
+                    src="images/movies and series images/action/topgunmaverick.jpg"
                     data-rt="https://www.rottentomatoes.com/m/top_gun_maverick" alt="Top Gun: Maverick">
-                <img class="movie" src="images/movies and series images/fantasy/harrypotter.jpg"
+                <img class="movie" data-id="harrypotter" src="images/movies and series images/fantasy/harrypotter.jpg"
                     data-rt="https://www.rottentomatoes.com/m/harry_potter_and_the_sorcerers_stone"
                     alt="Harry Potter and the Sorcerer's Stone">
             </section>
@@ -145,15 +158,17 @@
         <section class="newAndPremium">
             <h2>Newly Added and Premium Content</h2>
             <section class="list">
-                <img class="movie" src="images/movies and series images/premium/f1.jpg"
+                <img class="movie" data-id="f1themovie" src="images/movies and series images/premium/f1.jpg"
                     data-rt="https://www.rottentomatoes.com/m/f1_the_movie alt=" F1">
-                <img class="movie" src="images/movies and series images/premium/HTTYDLiveAction.jpg"
+                <img class="movie" data-id="howtotrainyourdragon"
+                    src="images/movies and series images/premium/HTTYDLiveAction.jpg"
                     data-rt="www.rottentomatoes.com/m/how_to_train_your_dragon_2025" alt="How to Train Your Dragon">
-                <img class="movie" src="images/movies and series images/premium/sonic3.jpg"
+                <img class="movie" data-id="sonic3" src="images/movies and series images/premium/sonic3.jpg"
                     data-rt="https://www.rottentomatoes.com/m/sonic_the_hedgehog_3" alt="Sonic 3">
-                <img class="movie" src="images/movies and series images/premium/wickedForGood.jpg"
+                <img class="movie" data-id="wickedforgood"
+                    src="images/movies and series images/premium/wickedForGood.jpg"
                     data-rt="https://www.rottentomatoes.com/m/wicked_for_good" alt="Wicked for Good">
-                <img class="movie" src="images/movies and series images/premium/superman.jpg"
+                <img class="movie" data-id="superman" src="images/movies and series images/premium/superman.jpg"
                     data-rt="https://www.rottentomatoes.com/search?search=superman" alt="Superman">
             </section>
             <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
