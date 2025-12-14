@@ -133,6 +133,36 @@ document.addEventListener("DOMContentLoaded", () => {
             if (open) closeModal(open);
         }
     });
+
+    // Handle contact form submission using event delegation
+    document.addEventListener('submit', (evt) => {
+        const form = evt.target;
+        if (form.id === 'contactForm') {
+            evt.preventDefault();
+            const formData = new FormData(form);
+            // use the 
+            fetch('https://formspree.io/f/mpwkalgy', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    alert('Thank you! Your message has been submitted successfully.');
+                    // Close the modal after successful submission
+                    const modal = form.closest('.modal');
+                    if (modal) closeModal(modal);
+                } else {
+                    alert('There was an error submitting the form. Please try again.');
+                }
+            }).catch(error => {
+                alert('There was an error submitting the form. Please try again.');
+                console.error('Error:', error);
+            });
+        }
+    });
 });
 
 
