@@ -1,204 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css" />
     <title>Movie Quest</title>
     <script type="module" src="home/js/main.js" defer></script>
 
-    <link rel="stylesheet" href="home/css/styles.css">
-    <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css">
-    <link rel="icon" type="image/x-icon" href="images/MovieQuestFavicon.jpg">
-</head>
+    <link rel="stylesheet" href="home/css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ijc7sgt.css" />
+    <link rel="icon" type="image/x-icon" href="images/MovieQuestFavicon.jpg" />
+  </head>
 
-<body>
+  <body>
     <nav>
-        <a href="index.html"><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
+      <a href="index.html"
+        ><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"
+      /></a>
 
-        <div id="navLinks">
-            <a href="index.html">
-                <p>Home</p>
-            </a>
-            <a href="watchlist.html">
-                Watchlist
-            </a>
-            <a href="recommendations.html">
-                Recommendations
-            </a>
-            <!--<img id="searchIcon" src="images/icons/search.png" alt="searchIcon">-->
-        </div>
+      <div id="navLinks">
+        <a href="index.html">
+          <p>Home</p>
+        </a>
+        <a href="watchlist.html"> Watchlist </a>
+        <a href="recommendations.html"> Recommendations </a>
+        <!--<img id="searchIcon" src="images/icons/search.png" alt="searchIcon">-->
+      </div>
 
-        <!-- Hamburger (Mobile only) -->
-        <div id="navDropdown">
-            <button class="nav-toggle" id="navToggle"><img src="images/icons/dropdown.png" alt=Menu></button>
-        </div>
-        <div id="mobileMenu" class="mobile-menu">
-            <a href="index.html">Home</a>
-            <a href="watchlist.html">Watchlist</a>
-            <a href="recommendations.html">Recommendations</a>
-            <!--<a href="#">Search</a>-->
-        </div>
+      <!-- Hamburger (Mobile only) -->
+      <div id="navDropdown">
+        <button class="nav-toggle" id="navToggle">
+          <img src="images/icons/dropdown.png" alt="Menu" />
+        </button>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="watchlist.html">Watchlist</a>
+        <a href="recommendations.html">Recommendations</a>
+        <!--<a href="#">Search</a>-->
+      </div>
 
-        <img id="navProfile" src="images/characters/adventurerProfile.png" alt="navProfile.name">
+      <img
+        id="navProfile"
+        src="images/characters/adventurerProfile.png"
+        alt="navProfile.name"
+      />
 
-        <section class="profile">
-            <div id="avatarModal" class="modal" aria-hidden="true">
-                <div class="modal-overlay"></div>
-                <div class="modal-content">
-                    <h2>Choose Your Character</h2>
+      <section class="profile">
+        <div id="avatarModal" class="modal" aria-hidden="true">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <h2>Choose Your Character</h2>
 
-                    <div id="avatar-grid">
-                        <img class="avatar-option" data-avatar="images/characters/wizard.png"
-                            data-profile="images/characters/wizardProfile.png" src="images/characters/wizard.png"
-                            alt="Wizard">
-                        <img class="avatar-option" data-avatar="images/characters/knight.png"
-                            data-profile="images/characters/knightProfile.png" src="images/characters/knight.png"
-                            alt="Knight">
-                        <img class="avatar-option" data-avatar="images/characters/rogue.png"
-                            data-profile="images/characters/rogueProfile.png" src="images/characters/rogue.png"
-                            alt="Rogue">
-                        <img class="avatar-option" data-avatar="images/characters/witch.png"
-                            data-profile="images/characters/witchProfile.png" src="images/characters/witch.png"
-                            alt="Witch">
-                        <img class="avatar-option" data-avatar="images/characters/adventurer.png"
-                            data-profile="images/characters/adventurerProfile.png"
-                            src="images/characters/adventurer.png">
-                    </div>
-
-                    <button class="modal-close" id="closeModal">X</button>
-                    <button class="modal-submit" id="submitModal">Confirm</button>
-                </div>
+            <div id="avatar-grid">
+              <img
+                class="avatar-option"
+                data-avatar="images/characters/wizard.png"
+                data-profile="images/characters/wizardProfile.png"
+                src="images/characters/wizard.png"
+                alt="Wizard"
+              />
+              <img
+                class="avatar-option"
+                data-avatar="images/characters/knight.png"
+                data-profile="images/characters/knightProfile.png"
+                src="images/characters/knight.png"
+                alt="Knight"
+              />
+              <img
+                class="avatar-option"
+                data-avatar="images/characters/rogue.png"
+                data-profile="images/characters/rogueProfile.png"
+                src="images/characters/rogue.png"
+                alt="Rogue"
+              />
+              <img
+                class="avatar-option"
+                data-avatar="images/characters/witch.png"
+                data-profile="images/characters/witchProfile.png"
+                src="images/characters/witch.png"
+                alt="Witch"
+              />
+              <img
+                class="avatar-option"
+                data-avatar="images/characters/adventurer.png"
+                data-profile="images/characters/adventurerProfile.png"
+                src="images/characters/adventurer.png"
+              />
             </div>
-        </section>
+
+            <button class="modal-close" id="closeModal">X</button>
+            <button class="modal-submit" id="submitModal">Confirm</button>
+          </div>
+        </div>
+      </section>
     </nav>
 
-
     <div id="movieModal" class="modal" aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div id="movie-modal-content">
-            <img id="modalImage">
-            <div class="movie-modal-info">
+      <div class="modal-overlay"></div>
+      <div id="movie-modal-content">
+        <img id="modalImage" />
+        <div class="movie-modal-info">
+          <h2 id="modalTitle"></h2>
+          <p id="modalYear">Year: <span></span></p>
+          <p id="modalDuration">Time: <span></span></p>
+          <p id="modalRating">Rating: <span></span></p>
+          <p id="modalxpReward"></p>
+          <p id="modalDescription">Summary: <span></span></p>
 
-                <h2 id="modalTitle"></h2>
-                <p id="modalYear">Year: <span></span></p>
-                <p id="modalDuration">Time: <span></span></p>
-                <p id="modalRating">Rating: <span></span></p>
-                <p id="modalxpReward"></p>
-                <p id="modalDescription">Summary: <span></span></p>
-
-                <a id="rtButton" class="rt-button" target="_blank">
-                    <img src="images/icons/tomato.png" alt="Rotten Tomatoes Icon">
-                    <h3>Rotten Tomatoes</h3>
-                </a>
-            </div>
-            <button id="modalClose">X</button>
+          <a id="rtButton" class="rt-button" target="_blank">
+            <img src="images/icons/tomato.png" alt="Rotten Tomatoes Icon" />
+            <h3>Rotten Tomatoes</h3>
+          </a>
         </div>
+        <button id="modalClose">X</button>
+      </div>
     </div>
 
-
     <section class="content">
-        <h1>Welcome Back Taylor!</h1>
-        <section class="heroInfo">
-            <section class="QuestInfo">
-                <div class="continueQuestInfo">
-                    <div class="continueQuestInfoImage">
-                        <img class="movie" data-id="topgunmaverick"
-                            data-rt="https://www.rottentomatoes.com/m/top_gun_maverick"
-                            src="images/movies and series images/action/topgunmaverick.jpg" alt="questProgress">
-                    </div>
-                    <div id="questText">
-                        <h2>Continue Your Quest</h2>
-                        <p>
-                            Top Gun: Maverick<br><br>
-                            Rating: 8.2/10
-                            <br>Duration: 2h 10m
-                            <br><br>
-                            The story involves Maverick confronting his past while training a group of younger Top Gun
-                            graduates, including the son of his deceased best friend, for a dangerous mission.
-                            <br><br>
-                            Quest: True Adventurer<br>1/3 Complete<br>30 XP Upon Completion
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section class="avatarInfo">
-                <img id="profileView" src="images/characters/adventurer.png" alt="Profile Avatar">
-                <div id="avatarStats">
-                    <h2>Taylor</h2>
-                    <p>
-                        Level 2 Adventurer<br>
-                        XP: 1200/2000<br>
-                        Next Level In: 800 XP<br><br>
-                        Achievements:<br>
-                        - Movie Buff
-                    </p>
-                </div>
-            </section>
-        </section>
-        <section class="continueWatching">
-            <h2>Continue Watching</h2>
-            <section class="list">
-                <img class="movie" data-id="nightatthemuseum"
-                    src="images/movies and series images/family/nightatthemuseum.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/night_at_the_museum" alt="Night At The Museum">
-                <img class="movie" data-id="thethursdaymurderclub"
-                    src="images/movies and series images/mystery/thethursdaymurderclub.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/the_thursday_murder_club" alt="The Thursday Murder Club">
-                <img class="movie" data-id="topgunmaverick"
-                    src="images/movies and series images/action/topgunmaverick.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/top_gun_maverick" alt="Top Gun: Maverick">
-                <img class="movie" data-id="harrypotter" src="images/movies and series images/fantasy/harrypotter.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/harry_potter_and_the_sorcerers_stone"
-                    alt="Harry Potter and the Sorcerer's Stone">
-            </section>
-            <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
-        </section>
-        <section class="newAndPremium">
-            <h2>Newly Added and Premium Content</h2>
-            <section class="list">
-                <img class="movie" data-id="f1themovie" src="images/movies and series images/premium/f1.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/f1_the_movie" alt="F1">
-                <img class="movie" data-id="howtotrainyourdragon"
-                    src="images/movies and series images/premium/HTTYDLiveAction.jpg"
-                    data-rt="www.rottentomatoes.com/m/how_to_train_your_dragon_2025" alt="How to Train Your Dragon">
-                <img class="movie" data-id="sonic3" src="images/movies and series images/premium/sonic3.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/sonic_the_hedgehog_3" alt="Sonic 3">
-                <img class="movie" data-id="wickedforgood"
-                    src="images/movies and series images/premium/wickedForGood.jpg"
-                    data-rt="https://www.rottentomatoes.com/m/wicked_for_good" alt="Wicked for Good">
-                <img class="movie" data-id="superman" src="images/movies and series images/premium/superman.jpg"
-                    data-rt="https://www.rottentomatoes.com/search?search=superman" alt="Superman">
-            </section>
-            <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
-        </section>
-        <section class="genres">
-            <h2>Genres</h2>
-            <div class="carousel-container">
-                <button class="carousel-btn carousel-prev" id="genresCarouselPrev">❮</button>
-                <section class="genresCircles carousel-track">
-                    <a href="recommendations.html"><img src="images/icons/genres/action.png" alt="Action"></a>
-                    <a href="recommendations.html"><img src="images/icons/genres/comedy.png" alt="Comedy"></a>
-                    <a href="recommendations.html"><img src="images/icons/genres/fantasy.png" alt="Fantasy"></a>
-                    <a href="recommendations.html"><img src="images/icons/genres/sci-fi.png" alt="Sci-Fi"></a>
-                    <a href="recommendations.html"><img src="images/icons/genres/series.png" alt="Series"></a>
-                    <a href="recommendations.html"><img src="images/icons/genres/family.png" alt="Family"></a>
-                    <a href="recommendations.html"><img src="images/icons/genres/kids.png" alt="Kids"></a>
-                    <a href="recommendations.html"><img src="images/icons/genres/mystery.png" alt="Mystery"></a>
-                </section>
-                <button class="carousel-btn carousel-next" id="genresCarouselNext">❯</button>
+      <h1>Welcome Back Taylor!</h1>
+      <section class="heroInfo">
+        <section class="QuestInfo">
+          <div class="continueQuestInfo">
+            <div class="continueQuestInfoImage">
+              <img
+                class="movie"
+                data-id="topgunmaverick"
+                data-rt="https://www.rottentomatoes.com/m/top_gun_maverick"
+                src="images/movies and series images/action/topgunmaverick.jpg"
+                alt="questProgress"
+                style="cursor: pointer"
+              />
             </div>
+            <div id="questText">
+              <h2>Continue Your Quest</h2>
+              <p>
+                Top Gun: Maverick<br /><br />
+                Rating: 8.2/10
+                <br />Duration: 2h 10m <br /><br />
+                The story involves Maverick confronting his past while training
+                a group of younger Top Gun graduates, including the son of his
+                deceased best friend, for a dangerous mission.
+                <br /><br />
+                Quest: True Adventurer<br />1/3 Complete<br />30 XP Upon
+                Completion
+              </p>
+            </div>
+          </div>
         </section>
+        <section class="avatarInfo">
+          <img
+            id="profileView"
+            src="images/characters/adventurer.png"
+            alt="Profile Avatar"
+          />
+          <div id="avatarStats">
+            <h2>Taylor</h2>
+            <p>
+              Level 2 Adventurer<br />
+              XP: 1200/2000<br />
+              Next Level In: 800 XP<br /><br />
+              Achievements:<br />
+              - Movie Buff
+            </p>
+          </div>
+        </section>
+      </section>
+      <section class="continueWatching">
+        <h2>Continue Watching</h2>
+        <section class="list">
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="nightatthemuseum"
+            src="images/movies and series images/family/nightatthemuseum.jpg"
+            data-rt="https://www.rottentomatoes.com/m/night_at_the_museum"
+            alt="Night At The Museum"
+          />
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="thethursdaymurderclub"
+            src="images/movies and series images/mystery/thethursdaymurderclub.jpg"
+            data-rt="https://www.rottentomatoes.com/m/the_thursday_murder_club"
+            alt="The Thursday Murder Club"
+          />
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="topgunmaverick"
+            src="images/movies and series images/action/topgunmaverick.jpg"
+            data-rt="https://www.rottentomatoes.com/m/top_gun_maverick"
+            alt="Top Gun: Maverick"
+          />
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="harrypotter"
+            src="images/movies and series images/fantasy/harrypotter.jpg"
+            data-rt="https://www.rottentomatoes.com/m/harry_potter_and_the_sorcerers_stone"
+            alt="Harry Potter and the Sorcerer's Stone"
+          />
+        </section>
+        <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
+      </section>
+      <section class="newAndPremium">
+        <h2>Newly Added and Premium Content</h2>
+        <section class="list">
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="f1themovie"
+            src="images/movies and series images/premium/f1.jpg"
+            data-rt="https://www.rottentomatoes.com/m/f1_the_movie"
+            alt="F1"
+          />
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="howtotrainyourdragon"
+            src="images/movies and series images/premium/HTTYDLiveAction.jpg"
+            data-rt="www.rottentomatoes.com/m/how_to_train_your_dragon_2025"
+            alt="How to Train Your Dragon"
+          />
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="sonic3"
+            src="images/movies and series images/premium/sonic3.jpg"
+            data-rt="https://www.rottentomatoes.com/m/sonic_the_hedgehog_3"
+            alt="Sonic 3"
+          />
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="wickedforgood"
+            src="images/movies and series images/premium/wickedForGood.jpg"
+            data-rt="https://www.rottentomatoes.com/m/wicked_for_good"
+            alt="Wicked for Good"
+          />
+          <img
+            class="movie"
+            style="cursor: pointer"
+            data-id="superman"
+            src="images/movies and series images/premium/superman.jpg"
+            data-rt="https://www.rottentomatoes.com/search?search=superman"
+            alt="Superman"
+          />
+        </section>
+        <!--<img id="watchMore" src="images/icons/next.png" alt="arrow pointing right for watch more">-->
+      </section>
+      <section class="genres">
+        <h2>Genres</h2>
+        <div class="carousel-container">
+          <button class="carousel-btn carousel-prev" id="genresCarouselPrev">
+            ❮
+          </button>
+          <section class="genresCircles carousel-track">
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/action.png" alt="Action"
+            /></a>
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/comedy.png" alt="Comedy"
+            /></a>
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/fantasy.png" alt="Fantasy"
+            /></a>
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/sci-fi.png" alt="Sci-Fi"
+            /></a>
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/series.png" alt="Series"
+            /></a>
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/family.png" alt="Family"
+            /></a>
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/kids.png" alt="Kids"
+            /></a>
+            <a href="recommendations.html"
+              ><img src="images/icons/genres/mystery.png" alt="Mystery"
+            /></a>
+          </section>
+          <button class="carousel-btn carousel-next" id="genresCarouselNext">
+            ❯
+          </button>
+        </div>
+      </section>
     </section>
     <footer>
-        <a href="index.html"><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"></a>
-        <h2>Cookies</h2>
-        <h2>Privacy Policy</h2>
-        <a href="contact.html" class="open-contact-modal">
-            <h2>Contact</h2>
-        </a>
+      <a href="index.html"
+        ><img id="logo" src="images/MovieQuestLogo.png" alt="MovieQuest Logo"
+      /></a>
+      <h2>Cookies</h2>
+      <h2>Privacy Policy</h2>
+      <a href="contact.html" class="open-contact-modal">
+        <h2>Contact</h2>
+      </a>
     </footer>
-</body>
-
+  </body>
 </html>
