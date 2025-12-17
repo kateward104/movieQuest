@@ -90,6 +90,15 @@ h2 {
 .list {
     display: flex;
     gap: 20px;
+    flex-wrap: nowrap;
+    /* prevent wrapping */
+    overflow-x: auto;
+    /* allow horizontal scroll */
+    -webkit-overflow-scrolling: touch;
+    /* smooth scrolling on iOS */
+    gap: 1em;
+    padding-bottom: 1em;
+    /* avoid content touching bottom edge */
 }
 
 .list img {
@@ -225,11 +234,6 @@ h2 {
         width: 10em;
         /* adjust as needed */
         height: auto;
-    }
-
-    /* optional: hide scrollbar visually but keep scrollable */
-    .list::-webkit-scrollbar {
-        display: none;
     }
 
 

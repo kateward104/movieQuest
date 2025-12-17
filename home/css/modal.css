@@ -92,6 +92,9 @@ body.modal-open {
 }
 
 
+
+/* Movie Modal Styling */
+
 button,
 .rt-button {
     background-color: var(--tan);
@@ -167,6 +170,7 @@ button,
 @media screen and (max-width: 768px) {
     #movie-modal-content {
         flex-direction: column;
+        height: 500px;
     }
 
     #movie-modal-content img {

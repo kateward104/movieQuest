@@ -43,7 +43,6 @@ function initAvatarModal() {
         }
     });
 
-    // Click avatar → save + preview immediately
     avatarOptions.forEach(img => {
         img.addEventListener("click", () => {
             const avatar = img.dataset.avatar;
@@ -62,7 +61,6 @@ async function loadMovies() {
     const res = await fetch("home/js/movies.json");
     const data = await res.json();
 
-    // Map by ID
     return Object.fromEntries(
         data.movies.map(movie => [movie.id, movie])
     );
@@ -86,7 +84,6 @@ function initMovieModal(movieMap) {
 
     document.querySelectorAll(".movie").forEach(img => {
         img.addEventListener("click", () => {
-            // USE img.id (matches your HTML)
             const movie = movieMap[img.dataset.id];
             if (!movie) return;
 
@@ -112,9 +109,9 @@ function initMovieModal(movieMap) {
     });
 }
 
-// ---------- Init ----------
-document.addEventListener("DOMContentLoaded", async () => {
-    initAvatarModal();
-    const movies = await loadMovies();
-    initMovieModal(movies);
-});
+// ---------- Exports ----------
+export {
+    initAvatarModal,
+    loadMovies,
+    initMovieModal
+};
