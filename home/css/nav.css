@@ -1,11 +1,24 @@
+:root {
+    --dark-blue: #222C40;
+    --light-blue: #394A59;
+    --tan: #F2DEA0;
+    --darker-tan: #D9BD89;
+    --gray: #A6977B;
+    --header-font: "connemara-old-style", sans-serif;
+    /* font-family: "connemara-old-style", sans-serif;
+    font-weight: 700;
+    font-style: normal;*/
+}
+
+
 /************ Navigation ******************/
 nav {
     display: flex;
     background-color: var(--light-blue);
     justify-content: space-between;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    padding-right: -5em;
+    /* optional horizontal padding */
     width: 100%;
     box-sizing: border-box;
     position: fixed;
@@ -13,23 +26,37 @@ nav {
     left: 0;
     right: 0;
     height: 7em;
+    z-index: 10;
 }
 
 #navLinks {
     display: flex;
-    align-content: center;
-    justify-content: space-between;
-    gap: 7em;
+    justify-content: space-around;
+    /* flexible spacing */
+    align-items: center;
+    gap: 6em;
+    /* fallback spacing */
 }
+
+
+#navLinks a {
+    font-family: var(--header-font);
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--tan);
+    font-size: 1.2rem;
+    padding: 0.5em 0;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#navLinks a:hover {
+    color: var(--darker-tan);
+    transform: scale(1.05);
+}
+
 
 #navDropdown {
     display: none;
-}
-
-#searchIcon {
-    width: 8%;
-    height: 8%;
-    align-content: center;
 }
 
 /* Bounce on hover */
@@ -72,6 +99,7 @@ nav {
     font-weight: 600;
 }
 
+
 nav a {
     padding: 0px;
     margin: 0px;
@@ -99,15 +127,17 @@ nav a {
 
 
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 950px) {
     nav {
         display: flex;
         flex-direction: column;
         width: 100%;
         max-width: 100%;
-        height: 20em;
         align-items: center;
         position: relative;
+        height: 100%;
     }
 
 
@@ -136,8 +166,11 @@ nav a {
     #navProfile {
         width: 170px;
         height: auto;
-        margin-bottom: 0;
         margin-right: 0;
+    }
+
+    .mobile-menu a:hover {
+        background-color: var(--dark-blue);
     }
 
     #logo {
