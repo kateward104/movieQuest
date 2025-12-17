@@ -46,9 +46,6 @@
     cursor: pointer;
 }
 
-.contact-modal-body {
-    padding-top: 8px;
-}
 
 /* Prevent page scrolling when modal open */
 body.modal-open {

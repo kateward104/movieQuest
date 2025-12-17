@@ -1,7 +1,8 @@
 @import "modal.css";
 @import "nav.css";
 @import "footer.css";
-
+@import "recommendations.css";
+@import "contact.css";
 
 :root {
     --dark-blue: #222C40;
@@ -14,6 +15,7 @@
     font-weight: 700;
     font-style: normal;*/
 }
+
 
 section {
     margin-top: 40px;
@@ -170,33 +172,12 @@ h2 {
 }
 
 
+@media screen and (max-width: 1070px) {
 
-
-
-
-/* Recommendations Page */
-
-.newQuests {
-    text-align: center;
-    justify-content: center;
+    .heroInfo {
+        flex-direction: column;
+    }
 }
-
-.newQuestsList {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-}
-
-#questIcon img {
-    width: 50%;
-    height: auto;
-}
-
-#watchMore {
-    width: 10%;
-    height: 10%;
-}
-
 
 
 
@@ -225,12 +206,32 @@ h2 {
         height: auto;
     }
 
-
     .list {
         display: flex;
-        gap: 20px;
-        overflow: hidden;
+        flex-wrap: nowrap;
+        /* prevent wrapping */
+        overflow-x: auto;
+        /* allow horizontal scroll */
+        -webkit-overflow-scrolling: touch;
+        /* smooth scrolling on iOS */
+        gap: 1em;
+        padding-bottom: 1em;
+        /* avoid content touching bottom edge */
     }
+
+    .list img.movie {
+        flex: 0 0 auto;
+        /* prevent shrinking, keep width */
+        width: 10em;
+        /* adjust as needed */
+        height: auto;
+    }
+
+    /* optional: hide scrollbar visually but keep scrollable */
+    .list::-webkit-scrollbar {
+        display: none;
+    }
+
 
     .genres {
         gap: 5px;
@@ -240,13 +241,4 @@ h2 {
         width: 150px;
         height: auto;
     }
-
-
-
-    /* Recommendations Page */
-    .newQuestsList {
-        flex-direction: column;
-        align-content: center;
-    }
-
 }

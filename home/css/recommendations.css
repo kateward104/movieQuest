@@ -1,0 +1,35 @@
+/* Recommendations Page */
+
+.newQuests {
+    text-align: center;
+    justify-content: center;
+}
+
+.newQuestsList {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#questIcon img {
+    width: 50%;
+    height: auto;
+}
+
+#watchMore {
+    width: 10%;
+    height: 10%;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* Recommendations Page */
+    .newQuestsList {
+        flex-direction: column;
+        align-content: center;
+    }
+}
